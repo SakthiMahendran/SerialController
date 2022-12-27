@@ -20,8 +20,8 @@ func main() {
 		}
 
 		fmt.Println("Simulating")
-		err := is.StartSimulating()
-		fmt.Println("Disconnected due to ", err)
+		is.StartSimulating()
+		fmt.Println("Disconnected")
 
 		port.Close()
 	}

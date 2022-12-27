@@ -36,7 +36,7 @@ func (a *Arduino) WaitAndConnect() (serial.Port, string) {
 
 		select {
 		case portInfo := <-portInfoChan:
-			// close(portInfoChan)
+			close(portInfoChan)
 			return portInfo.port, portInfo.portName
 		case <-time.After(time.Second * 5):
 			continue
@@ -64,4 +64,6 @@ func (a *Arduino) tryHandShake(portName string, port serial.Port, portInfoChan c
 	case <-time.After(time.Second * 5):
 		port.Close()
 	}
+
+	close(signalChan)
 }
