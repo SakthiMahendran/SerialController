@@ -27,23 +27,23 @@ func (is *InputSimulator) StartSimulating() error {
 		}
 
 		switch inputType {
-		case mouseLeftClick:
-			mSimulator.leftClick()
+		case Click:
+			mSimulator.Click()
 
-		case mouseRightClick:
-			mSimulator.rightClick()
+		case Move:
+			mSimulator.Move()
 
-		case mouseScroll:
-			mSimulator.scroll()
+		case Press:
+			mSimulator.Press()
 
-		case mouseScrollRelative:
-			mSimulator.scrollRelative()
+		case Release:
+			mSimulator.Release()
 
-		case mouseMove:
-			mSimulator.move()
+		case End:
+			return nil
 
-		case mouseMoveRelative:
-			mSimulator.moveRelative()
+		case Scroll:
+			mSimulator.Scroll()
 		}
 	}
 }

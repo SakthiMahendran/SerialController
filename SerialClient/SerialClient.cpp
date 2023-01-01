@@ -31,6 +31,7 @@ void SerialClient::move(int x, int y, signed char wheel = 0) {
 
 void SerialClient::press(uint8_t btn = MOUSE_LEFT) {
     Serial.write(SerialClient::Press);
+    Serial.write(btn);
 }
 
 void SerialClient::release(uint8_t btn = MOUSE_LEFT) {
