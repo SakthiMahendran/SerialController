@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #define MOUSE_LEFT 1
 #define MOUSE_RIGHT 2
 #define MOUSE_MIDDLE 3
@@ -12,7 +14,6 @@ private:
     const uint8_t Scroll  = 6;
 
 public:
-  SerialClient(void);
   void begin(void);
   void end(void);
   void click(uint8_t b = MOUSE_LEFT);
